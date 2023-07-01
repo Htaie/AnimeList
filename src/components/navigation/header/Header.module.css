@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+    height: 60px;
+    background-color:#66bcbc;
+    width: 100%;
+}
+.container{
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+}
+.logo{
+    width: 68px ;
+}
+.search{
+    width: 40%;
+}
+.link__page{
+    margin-right: 40px;
+    text-decoration: none;
+    color: #fff;
+}
+.auth__btn{
+    background-color: transparent;
+    margin-right: 10px;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    transition: .2s linear;
+    color: #fff;
+}

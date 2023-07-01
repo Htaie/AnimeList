@@ -1,0 +1,28 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+.title__container{
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+
+    height: 100%;
+    padding: 10px 0 10px 10px;
+
+}
+.title__card{
+    padding: 20px;
+    display: flex;
+    height: 200px;
+    width: 460px;
+    background-color:rgb(178, 162, 162);
+}
+.title__image{
+    width: 150px;
+    margin-right:20px ;
+
+
+}
