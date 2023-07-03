@@ -10,8 +10,8 @@ const Header = () => {
             <div className={classes.container}>
                 <Link to="/"><img className={classes.logo} src={logo}  /></Link>
             <div className={classes.link__page}>
-                <Link to="/" className={classes.link__page} href="">Аниме</Link>
-                <Link to="/" className={classes.link__page} href="">Аниме</Link>
+                <Link to="manga" className={classes.link__page} href="">Манга</Link>
+                <Link to="anime" className={classes.link__page} href="">Аниме</Link>
                 <Link to="/anime-list" className={classes.link__page} href="">Список аниме</Link>
             </div>
             <div className={classes.search}>
