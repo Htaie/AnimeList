@@ -2,3 +2,91 @@
     width: 1600px;
     margin: 0 auto;
 }
+.titles__card{
+    width: 220px;
+    text-align-last: center;
+    border:1px solid #66bcbc;
+    padding: 10px;
+    margin: 20px 10px 0;
+}
+
+.container__inner{
+    display: flex;
+}
+
+.title__category{
+    width: 100%;
+}
+.titles__image{
+    width: 220px;
+}
+
+
+/* Btn next/prev a */
+.new__page{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.btn-arrow {
+    color: transparent;
+    display: block;
+    margin: 3rem;
+    position: relative;
+    width: 2.6rem;
+    height: 2.6rem;
+
+    background-color: rgba(black, .05);
+
+    transition: all 150ms ease-out;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+            top: 0;
+            left: 0;
+
+        background-color: #606060;
+        
+        transition: all 150ms ease-out;
+    }
+
+    &::before {
+        width: 75%;
+        height: 25%;
+    }
+
+    &::after {
+        width: 25%;
+        height: 75%;
+    }
+
+    &:hover, &:focus {
+        background-color: rgba(black, .1);
+        
+        &::before,
+        &::after {
+            background-color: #404040;
+        }
+    }
+
+    &.btn-arrow-left,
+    &.btn-arrow-right {
+        &::before,
+        &::after {
+            top: 12.5%;
+            left: 12.5%;
+        }
+    }
+
+    &.btn-arrow-left {
+        transform: rotate(-45deg);
+    }
+
+    &.btn-arrow-right {
+        transform: rotate(135deg);
+    }
+}

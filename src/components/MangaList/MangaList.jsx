@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import  './AnimeList.css'
+import  './MangaList.css'
 
 
 
@@ -13,7 +13,7 @@ const AnimeList = () => {
     useEffect(() => {
         if(fetching){
             axios
-            .get(`https://api.jikan.moe/v4/top/anime?page=${currentPage}`)
+            .get(`https://api.jikan.moe/v4/top/manga?page=${currentPage}`)
             .then(data => {
                 console.log(data)
                 setTitles( [ ...data.data.data] )
@@ -40,7 +40,7 @@ const AnimeList = () => {
                     <div className='title__rai'>
                     <h3>{item.title}</h3>
                     <p>Rating: {item.score} </p>
-                    <p>Episodes: {item.episodes}</p>
+                    <p>Volumes: {item.volumes}</p>
                     </div>
                 </div>
                 ))} 

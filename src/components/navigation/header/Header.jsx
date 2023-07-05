@@ -10,9 +10,9 @@ const Header = () => {
             <div className='container header__inner'>
                 <Link to="/"><img className='logo' src={logo}  /></Link>
             <div className='link__page'>
-                <Link to="manga" className='link__page' href="">Манга</Link>
-                <Link to="main" className='link__page' href="">Аниме</Link>
-                <Link to="/anime-list" className='link__page' href="">Список аниме</Link>
+                <Link to="/manga" className='link__page' >Манга</Link>
+                <Link to="/anime" className='link__page' >Аниме</Link>
+                <Link to="/anime-list" className='link__page'    >Список аниме</Link>
             </div>
             <div className='search'>
                 <Search/>
