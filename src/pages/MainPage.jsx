@@ -1,12 +1,17 @@
-import React from 'react';
-import MainPage from '../components/main-page/MainPage';
+import React, {useContext, createContext} from 'react';
+
+import TitlesBlock from '../components/TitlesBlock/BlockTitle'
+import '../style.css'
+import Header from '../components/navigation/header/Header';
 
 const Main = () => {
+
     return (
         <div>
-            <MainPage title={'Ongoing'}/>
-            <MainPage title={'Anime'}/>
-            <MainPage title={'Manga'}/>
+            <Header/>   
+
+            <TitlesBlock name={'Anime'} category={'anime'} />
+            <TitlesBlock name={'Manga'} category={'manga'}  /> */
         </div>
     );
 };

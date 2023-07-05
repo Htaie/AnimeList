@@ -3,13 +3,12 @@
     height: 60px;
     background-color:#66bcbc;
     width: 100%;
+
 }
-.container{
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
+.header__inner{
     display: flex;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
 }
 .logo{
     width: 68px ;
