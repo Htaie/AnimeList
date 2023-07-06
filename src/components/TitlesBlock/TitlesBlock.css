@@ -7,12 +7,22 @@
 }
 
 .container__inner{
-display: flex;
+    display: flex;
+}
+.title__category{
+    width: 1600px;
+    text-decoration: none;
+    color:white;
+    font-size: 33px;
+}
+.titles__category-container{
+    margin: 30px 0 0;
+    background-color: #66bcbc;
+    opacity: .5;
+    height: 40px;
+
 }
 
-.title__category{
-    width: 100%;
-}
 .titles__image{
     width: 220px;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import  './AnimeList.css'
+import TitlesCard from '../TitlesCard/TitlesCard';
 
 
 
@@ -13,7 +14,7 @@ const AnimeList = () => {
     useEffect(() => {
         if(fetching){
             axios
-            .get(`https://api.jikan.moe/v4/top/anime?page=${currentPage}`)
+            .get(`https://api.jikan.moe/v4/top/anime?page=${currentPage}&limit=24`)
             .then(data => {
                 console.log(data)
                 setTitles( [ ...data.data.data] )
@@ -31,24 +32,13 @@ const AnimeList = () => {
         setFetching(true)
         setCurrentPage(prevState => prevState + 1)
     }
-    return (   
+    return ( 
         <div className='container'>
-            <div className='container__inner'>
-                {titles.map(item  => (
-                <div className='titles__card'>
-                    <img src={item.images.jpg.large_image_url} className='titles__image' />
-                    <div className='title__rai'>
-                    <h3>{item.title}</h3>
-                    <p>Rating: {item.score} </p>
-                    <p>Episodes: {item.episodes}</p>
-                    </div>
-                </div>
-                ))} 
-            </div>
-            <div className="new__page">
+        <TitlesCard titlesData={titles}/>
+        <div className="new__page">
                 <button className='btn-arrow btn-arrow-left' onClick={prevHandler}>Prev</button>
                 <button className='btn-arrow btn-arrow-right' onClick={nextHandler}>Next</button>
-            </div>
+        </div>
         </div>
     );
 };

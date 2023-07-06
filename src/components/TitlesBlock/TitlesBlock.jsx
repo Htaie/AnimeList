@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './TitlesBlock.css'
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,13 +41,14 @@ const MainPage = (props) => {
     console.log(title)
     return (
         <div className='container'>
-            <h3 className='title__category'>{props.name}</h3>
+            <div className="titles__category-container">
+            <Link to={props.link} className='title__category'>{props.name}</Link>
+            </div>
                 <div className='container__inner'>
                     {title.map(item  => (
                         <div  className='titles__card' >
                             <img src={item.images.jpg.large_image_url} className='titles__image' alt="" />
                             <p>{item.title}</p>
-
                         </div>
                     ))}
                 </div> 
