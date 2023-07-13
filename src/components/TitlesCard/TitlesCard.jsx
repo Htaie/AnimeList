@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import TittlesDetails from '../TitlesDetails/TittlesDetails';
 
-const TitlesCard = ({titlesData}) => {
-    const [id, setId] = useState()
-    console.log(id)
+const TitlesCard = ({titlesData, setType, setId}) => {
     return (
             <div className='container__inner'>
                 {titlesData.map(item  => (
-                <Link to="" onClick={() => setId(item.mal_id)}>
+                <Link to={`${item.mal_id}`} key={item.mal_id}>
                     <div className='titles__card' key={item.mal_id}>
                         <img src={item.images.jpg.large_image_url} className='titles__image' />
                         <div className='title__rai'>
@@ -18,7 +15,6 @@ const TitlesCard = ({titlesData}) => {
                     </div>
                 </Link>
                 ))} 
-            <TittlesDetails id={id}/>
             </div>
     );
 };

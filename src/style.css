@@ -9,6 +9,10 @@
     padding: 10px;
     margin: 20px 10px 0;
 }
+.titles__image{
+    width: 220px;
+    height: 320px;
+}
 
 .container__inner{
     display: flex;
@@ -16,9 +20,6 @@
 
 .title__category{
     width: 100%;
-}
-.titles__image{
-    width: 220px;
 }
 
 

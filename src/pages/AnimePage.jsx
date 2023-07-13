@@ -1,15 +1,42 @@
 
-import AnimeList from '../components/AnimeList/AnimeList';
-import Header from '../components/navigation/header/Header';
+import React, { useState, useEffect} from 'react';
+import axios from 'axios';
+import TitlesCard from '../components/TitlesCard/TitlesCard';
 
-import React from 'react';
-
-const AnimePage = () => {
-    return (
-        <div>
-        <Header/>
-        <AnimeList/>
-    </div>
+const AnimePage = ({setType, setId}) => {
+    const [titles, setTitles] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [fetching, setFetching] = useState(true)
+    
+    useEffect(() => {
+        if(fetching){
+            axios
+            .get(`https://api.jikan.moe/v4/top/anime?page=${currentPage}&limit=24`)
+            .then(data => {
+                // console.log(data)
+                setTitles( [ ...data.data.data] )
+            })
+            .finally(() => setFetching(false))
+        }
+    }, [fetching])
+    
+    
+    const prevHandler = (e) =>{
+            setFetching(true)
+            setCurrentPage(prevState => prevState - 1)
+    }
+    const nextHandler = (e) =>{
+        setFetching(true)
+        setCurrentPage(prevState => prevState + 1)
+    }
+    return ( 
+        <div className='container'>
+        <TitlesCard titlesData={titles} setType={setType}/>
+        <div className="new__page">
+                <button className='btn-arrow btn-arrow-left' onClick={prevHandler}>Prev</button>
+                <button className='btn-arrow btn-arrow-right' onClick={nextHandler}>Next</button>
+        </div>
+        </div>
     );
 };
 
